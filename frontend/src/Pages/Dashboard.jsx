@@ -14,7 +14,7 @@ const Dashboard = () => {
       return;
     }
 
-    axios.get('http://localhost:5000/dashboard', {
+    axios.get('https://she-can-foundation-vert.vercel.app/dashboard', {
       headers: { 'auth-token': token }
     })
     .then(res => {
