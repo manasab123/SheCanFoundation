@@ -24,7 +24,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/register', form);
+      const res = await axios.post('https://she-can-foundation-vert.vercel.app/register', form);
       setMessage(res.data.message);
       setTimeout(() => navigate('/'), 1000); // redirect to login after 1 sec
     } catch (err) {
