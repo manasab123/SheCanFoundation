@@ -150,7 +150,7 @@ app.get('/dashboard', authenticateToken, async (req, res) => {
 
 // Root Route
 app.get('/', (req, res) => {
-  res.send('Backend is working!');
+  res.json('Backend is working!');
 });
 
 // Start Server
