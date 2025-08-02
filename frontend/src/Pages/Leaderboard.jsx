@@ -66,8 +66,13 @@ const Leaderboard = () => {
       </div>
 
       <div className="max-w-4xl mx-auto mt-10 text-center text-sm text-gray-500">
-        Last updated: August 1, 2025
+        Last updated: {new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
       </div>
+
     </div>
   );
 };

@@ -81,8 +81,7 @@ const handleLogin = async () => {
 
         <button
           onClick={handleLogin}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold text-lg transition-all duration-200"
-        >
+         className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md font-semibold transition">
           Login
         </button>
 

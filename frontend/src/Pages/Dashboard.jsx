@@ -104,7 +104,7 @@ const Dashboard = () => {
         )}
       </div>
 
-      {/* Referral History - Dummy */}
+      {/* Referral History (Dummy) */}
       <div className="max-w-5xl mx-auto mb-16">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Referral History</h2>
         <div className="space-y-4">

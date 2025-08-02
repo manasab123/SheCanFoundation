@@ -10,14 +10,14 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-// ✅ MongoDB Connection
-mongoose.connect("mongodb://localhost:27017/intern_portal", {
+// MongoDB Connection
+mongoose.connect("mongodb+srv://shecan:shecan@cluster0.ggobv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+}).then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-// ✅ Schema with Rank Field
+// Schema of intern
 const Intern = mongoose.model("Intern", {
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -27,18 +27,9 @@ const Intern = mongoose.model("Intern", {
   rank: { type: Number, default: null }
 });
 
-// ✅ Rank Updater Function
-const updateRanks = async () => {
-  const users = await Intern.find().sort({ donations: -1 });
 
-  for (let i = 0; i < users.length; i++) {
-    const rank = i < 20 ? i + 1 : 30 + (i - 20);
-    users[i].rank = rank;
-    await users[i].save();
-  }
-};
 
-// ✅ Register Route
+//  Register Route
 app.post('/register', async (req, res) => {
   const { name, email, password, referrerCode } = req.body;
 
@@ -70,7 +61,6 @@ app.post('/register', async (req, res) => {
     });
 
     await newUser.save();
-    await updateRanks(); // ✅ Recalculate ranks
 
     res.status(201).json({
       message: 'Registration successful',
@@ -86,7 +76,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// ✅ Login Route
+// Login Route
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -119,7 +109,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// ✅ Middleware: Auth Token Checker
+// Middleware: Auth Token Checker
 const authenticateToken = (req, res, next) => {
   const token = req.header('auth-token');
   if (!token) return res.status(401).json({ message: 'Access denied. Token missing.' });
@@ -133,7 +123,7 @@ const authenticateToken = (req, res, next) => {
   }
 };
 
-// ✅ Dashboard Route
+// Dashboard Route
 app.get('/dashboard', authenticateToken, async (req, res) => {
   try {
     const user = await Intern.findById(req.userId).select("-password");
@@ -152,12 +142,12 @@ app.get('/dashboard', authenticateToken, async (req, res) => {
   }
 });
 
-// ✅ Root Route
+// Root Route
 app.get('/', (req, res) => {
   res.send('Backend is working!');
 });
 
-// ✅ Start Server
+// Start Server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
