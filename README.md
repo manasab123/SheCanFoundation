@@ -94,8 +94,9 @@ mongodb mongoose database
 | `/register`    | POST   | Public   | Register a new intern             |
 | `/login`       | POST   | Public   | Authenticate and get token        |
 | `/dashboard`   | GET    | Private  | View logged-in user's dashboard   |
-| `/leaderboard` | GET    | Private  | View top ranked users list        |
-learderboard is has static data
+| `/leaderboard` | GET    | Private  | View top ranked users list        | static data
+
+
 ---
 
 ## Future Enhancements
