@@ -8,9 +8,15 @@ A full-stack web application built for internship program participants to manage
 
 ### Live Link
 **complete responsive on phone and desktop**
+- please register before login
 
 https://she-can-foundationn.vercel.app/
 
+### Mobile prototype
+https://github.com/user-attachments/assets/949ebe98-dfc6-45bc-9511-54ba5293c560
+
+### Desktop prototype
+https://github.com/user-attachments/assets/b62f2b16-5294-494c-9550-17247348f29b
 
 ## Features
 
@@ -39,11 +45,12 @@ https://she-can-foundationn.vercel.app/
 
 | Layer       | Technology                 |
 |-------------|----------------------------|
-| Frontend    | React.js, Tailwind CSS     |
+| Frontend    |React.js, vite, Tailwind CSS|
 | Backend     | Node.js, Express.js        |
 | Database    | MongoDB + Mongoose         |
 | Auth        | JWT + bcryptjs             |
 | Tools       | Axios, Postman             |
+| Deployment  | vercel                     |
 
 ---
 ## Folder Structure
@@ -73,7 +80,7 @@ She Can Foundation
 ```bash
 cd backend
 npm install
-node server.js
+node .\server.js
 ```
 
 ### Frontend Setup
@@ -94,26 +101,23 @@ mongodb mongoose database
 | `/register`    | POST   | Public   | Register a new intern             |
 | `/login`       | POST   | Public   | Authenticate and get token        |
 | `/dashboard`   | GET    | Private  | View logged-in user's dashboard   |
-| `/leaderboard` | GET    | Private  | View top ranked users list        | static data
+| `/leaderboard` | GET    | Private  | View top ranked users list        |  ( static data )
 
 
 ---
 
 ## Future Enhancements
 
-- Public leaderboard with real-time updates
 - Admin panel to view referral stats and reports
 - Rank updation
 - Navbar anf Footer for the page
+- Public leaderboard with real-time updates
+- Updating Rewards section based on requirements
 
 ---
 
 ## Acknowledgements
 
-This project was built as part of an internship onboarding system with a goal to:
-
-- Simplify participant engagement
-- Enable transparent tracking of referrals
-- Empower interns to amplify social good through donations
+This project was built as part of an internship onboarding @She Can Foundation Round 1
 
 
