@@ -13,10 +13,10 @@ A full-stack web application built for internship program participants to manage
 https://she-can-foundationn.vercel.app/
 
 ### Mobile prototype
-https://github.com/user-attachments/assets/949ebe98-dfc6-45bc-9511-54ba5293c560
+[View Mobile Demo](https://github.com/user-attachments/assets/949ebe98-dfc6-45bc-9511-54ba5293c560)
 
 ### Desktop prototype
-https://github.com/user-attachments/assets/b62f2b16-5294-494c-9550-17247348f29b
+[View Desktop Demo](https://github.com/user-attachments/assets/b62f2b16-5294-494c-9550-17247348f29b)
 
 ## Features
 
