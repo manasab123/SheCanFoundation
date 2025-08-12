@@ -11,6 +11,7 @@ const Register = () => {
     referralCode: ''
   });
   const [message, setMessage] = useState('');
+    const [agreeTerms, setAgreeTerms]=useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,6 +23,10 @@ const Register = () => {
       setMessage('All fields are required.');
       return;
     }
+      if (!agreeTerms) {
+    setMessage("Please agree to the Terms of Use & Privacy Policy");
+    return;
+  }
 
     try {
       const res = await axios.post('https://she-can-foundation-vert.vercel.app/register', form);
@@ -97,6 +102,24 @@ const Register = () => {
             Login
           </a>
         </p>
+<div className="termsandconditions flex items-center space-x-2 mt-[4px]  ml-[30px] " >
+  <input
+    type="checkbox"
+    id="terms"
+    checked={agreeTerms}
+    onChange={(e) => setAgreeTerms(e.target.checked)}
+    className="w-3 h-3 mt-[4px] text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+  />
+  <label
+    className="text-xs font-medium text-gray-500 select-none mt-[3px] ml-0.5 cursor-pointer"
+  >
+    By continuing, I agree to the{' '}
+    <span className="text-indigo-600 underline cursor-pointer">Terms of Use</span> &amp;{' '}
+    <span className="text-indigo-600 underline cursor-pointer">Privacy Policy</span>
+  </label>
+</div>
+
+
       </div>
     </div>
   );
